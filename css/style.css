@@ -1,0 +1,179 @@
+:root {
+    --font-color: #ffffff;
+    --background-color: #fff;
+
+}
+
+body {
+    background: linear-gradient(to bottom right, #ee7752, #631734, #145f7a, #189678) no-repeat fixed;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'mononoki';
+    overflow: hidden;
+}
+
+@keyframes fade {
+    0% { opacity: 0}
+    100% { opacity: 1}
+}
+
+/* background animation */
+
+@keyframes gradient {
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
+}
+
+/* main content */
+
+.hero {
+    color: var(--font-color);
+    text-transform: uppercase;
+    font-weight: 100;
+    line-height: 1.4;
+    font-size: 1em;
+    margin: 400px 15% 0px 15%;
+
+    animation: fade 1s linear forwards;
+}
+
+.hero p {
+    max-width: 400px;
+    min-width: 400px;
+}
+
+.hero h1 a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+/* link nav */
+
+nav ul {
+    position: fixed;
+    display: flex;
+    margin: 0px 0px 0px -2.5em;
+    padding-right: 10px;
+}
+
+nav li {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    list-style: none;
+    padding-right: 5px;
+
+}
+
+nav li a {
+    color: var(--font-color);
+
+    transition: 0.2s color ease-out;
+    -moz-transition: 0.2s color ease-out;
+	-webkit-transition: 0.2s color ease-out;
+}
+
+nav li a:before {
+    background-color: var(--background-color);
+
+    transition: 0.2s height ease-out;
+    -moz-transition: 0.2s height ease-out;
+	-webkit-transition: 0.2s height ease-out;
+}
+
+nav li a:hover {
+    color: #006bb6;
+}
+
+/* scrolling words */
+
+.sliding-vertical {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    overflow: hidden;
+    margin-left: -3px;
+}
+
+.sliding-vertical ul {
+    list-style: none;
+    padding: 0 0.5ex;
+    margin: 0;
+    height: 1.2em;
+}
+
+.sliding-vertical li {
+    animation: animation 8s ease-in-out alternate infinite;
+}
+
+.sliding-vertical ul.mask {
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes animation {
+    0%, 10% {transform: translateY(0%);}
+    15%, 35% {transform: translateY(-100%);}
+    40%, 60% {transform: translateY(-200%);}
+    65%, 85% {transform: translateY(-300%);}
+    90%, 100% {transform: translateY(-400%);}
+}
+
+/* project list */
+
+.content_slider {
+    margin: 25px 0 -0px 0;
+}
+
+.slider_item {
+    animation: fade 1s linear forwards;
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.slider li {
+    list-style: none;
+}
+
+.slider li a {
+    text-decoration: none;
+    color: var(--font-color);
+    list-style: none;
+}
+
+.prev_button, .next_button {
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    opacity: 0.3;
+    padding: 0.5rem 0.5rem;
+    border-radius: 1rem;
+    transition: opacity 0.2s ease-out;   
+}
+
+.next_button {
+    margin: -48px 0px 0px 400px;
+}
+
+.prev_button {
+    margin: -70px 0px 0px -50px;
+    transform: rotate(180deg);
+}
+
+.prev_button:hover, .next_button:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
+.arrow {
+    fill: var(--background-color);
+}
